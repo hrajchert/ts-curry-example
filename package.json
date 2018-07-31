@@ -1,0 +1,46 @@
+{
+  "name": "curry",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "author": "Hernan Rajchert <hrajchert@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsns run",
+    "test": "run-s build-and:test",
+    "tdd": "run-p watch:*",
+    "build": "tsns build",
+    "docker:build": "docker build -t ${npm_package_name}:${npm_package_version} .",
+    "docker:run": "docker run --rm ${npm_package_name}:${npm_package_version}",
+    "commitmsg": "validate-commit-msg",
+    "precommit": "run-s lint:* \"build -- --no-unused-locals\"",
+    "prepush": "run-s build-and:test",
+    "lint:ts": "tslint --project tsconfig.json",
+    "lint-and-fix:-ts": "tslint --project tsconfig.json --fix",
+    "build-and:test": "run-s build test-once",
+    "build-and:start": "run-s build start",
+    "watch:ts": "tsc -w",
+    "watch:test": "mocha dist/**/*.test.js -w --colors --inspect --growl",
+    "test-once": "mocha dist/**/*.test.js --inspect --colors",
+    "contributors-add": "all-contributors add",
+    "contributors-generate": "all-contributors generate"
+  },
+  "dependencies": {
+    "tsns": "0.0.15",
+    "typescript": "^2.3.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.5.1",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.12",
+    "all-contributors-cli": "^4.5.1",
+    "chai": "^3.5.0",
+    "husky": "^0.13.3",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^4.0.2",
+    "sinon": "^2.1.0",
+    "tslint": "^5.1.0",
+    "tslint-config-acamica": "^1.0.1",
+    "validate-commit-msg": "^2.12.1"
+  }
+}
