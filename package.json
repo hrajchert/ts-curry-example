@@ -1,5 +1,5 @@
 {
-  "name": "curry",
+  "name": "ts-curry-example",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "tsns": "0.0.15",
-    "typescript": "^2.3.2"
+    "typescript": "3.0.1"
   },
   "devDependencies": {
     "@types/chai": "^3.5.1",

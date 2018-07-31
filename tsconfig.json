@@ -4,6 +4,7 @@
         "target": "es2015",
         "outDir": "dist",
         "strict": true,
+        "allowJs": true,
         "noUnusedLocals": false,
         "sourceMap": true
     }

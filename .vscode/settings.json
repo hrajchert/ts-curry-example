@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "tslint.autoFixOnSave": true,
-    "tslint.run": "onType"
+    "tslint.run": "onType",
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
