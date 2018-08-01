@@ -19,7 +19,7 @@ export type Curry2<A, B, R> = {
 export type Curry1<A, R> = (a: A) => R;
 
 
-export type GenericCurry <T, R> =
+export type VariadicCurry <T, R> =
     T extends [any, any, any, any] ? Curry4<T[0], T[1], T[2], T[3], R> :
     T extends [any, any, any] ? Curry3<T[0], T[1], T[2], R> :
     T extends [any, any] ? Curry2<T[0], T[1], R> :
@@ -28,4 +28,4 @@ export type GenericCurry <T, R> =
 ;
 
 export function curry <T extends any[], R>
-    (fn: (...args: T) => R): GenericCurry<T, R>;
+    (fn: (...args: T) => R): VariadicCurry<T, R>;
