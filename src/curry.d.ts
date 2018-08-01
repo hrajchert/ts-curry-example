@@ -24,7 +24,7 @@ export type GenericCurry <T, R> =
     T extends [any, any, any] ? Curry3<T[0], T[1], T[2], R> :
     T extends [any, any] ? Curry2<T[0], T[1], R> :
     T extends [any] ? Curry1<T[0], R> :
-    never
+    unknown
 ;
 
 export function curry <T extends any[], R>
