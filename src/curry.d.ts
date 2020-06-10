@@ -20,12 +20,12 @@ export type Curry1<A, R> = (a: A) => R;
 
 
 export type VariadicCurry <T, R> =
-    T extends [any, any, any, any] ? Curry4<T[0], T[1], T[2], T[3], R> :
-    T extends [any, any, any] ? Curry3<T[0], T[1], T[2], R> :
-    T extends [any, any] ? Curry2<T[0], T[1], R> :
-    T extends [any] ? Curry1<T[0], R> :
-    unknown
+    T extends [unknown, unknown, unknown, unknown] ? Curry4<T[0], T[1], T[2], T[3], R> :
+    T extends [unknown, unknown, unknown] ? Curry3<T[0], T[1], T[2], R> :
+    T extends [unknown, unknown] ? Curry2<T[0], T[1], R> :
+    T extends [unknown] ? Curry1<T[0], R> :
+    never
 ;
 
-export function curry <T extends any[], R>
+export function curry <T extends unknown[], R>
     (fn: (...args: T) => R): VariadicCurry<T, R>;
